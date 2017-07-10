@@ -2,16 +2,31 @@
  * @flow
  */
 
+//Native Components
 import React, { Component } from 'react';
 import {
   Button,
+  FlatList,
   Image,
   StyleSheet,
   Text,
   View
 } from 'react-native';
 
+//Library Components
+import { List, ListItem  } from 'react-native-elements';
+
+//Import data
+import { listData } from './data';
+
 export default class PageOne extends React.Component {
+
+  constructor(props){
+    super(props);
+    this.state={
+      data: listData
+    };
+  }
 
   //Define the navigation options for this page
   static navigationOptions = {
@@ -38,6 +53,23 @@ export default class PageOne extends React.Component {
           //Trigger the drawer on button click
           onPress={() => this.props.navigation.navigate('DrawerOpen')}
         />
+        <List>
+          <FlatList
+            data={this.state.data}
+            keyExtractor={ item => item.email }
+            //One oway of improving the initial rendering time is specifying
+            //the minimum number of items to be displayed on first load
+            initialListSize={14}
+            renderItem={ ({ item }) =>
+              <ListItem 
+                roundAvatar
+                title={ `${item.name.first} ${item.name.last}` }
+                avatar={{ uri: item.picture.thumbnail }}
+                containerStyle={{ borderBottomWidth: 3 }}
+              />
+            }
+          />
+        </List>
       </View>
     );
   }
@@ -45,10 +77,9 @@ export default class PageOne extends React.Component {
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-    backgroundColor: '#F5FCFF',
+    borderTopWidth: 0, 
+    borderBottomWidth: 0,
+    backgroundColor: "white"
   },
   welcome: {
     fontSize: 20,

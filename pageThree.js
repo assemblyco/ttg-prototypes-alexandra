@@ -2,7 +2,6 @@
  * @flow
  */
 
-
 //Native components
 import React, { Component } from 'react';
 import {
@@ -16,21 +15,21 @@ import {
 import { List, ListItem  } from 'react-native-elements';
 
 //Import data
-import { Catz } from './catz'
+import { Dawgs } from './Dawgs'
 
-export default class PageTwo extends React.Component {
+export default class PageThree extends React.Component {
 
   constructor(props){
     super(props);
     this.state={
-      data: Catz
+      data: Dawgs
     }
   }
 
   //Define the navigation options for this page
   static navigationOptions = {
     //drawerLabel acts as link
-    drawerLabel: "Page Two",
+    drawerLabel: "Page Three",
     //drawerIcon is not required
     drawerIcon: ({ tintColor }) => (
       <Image
