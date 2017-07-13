@@ -34,32 +34,32 @@ export default class PageTwo extends React.Component {
     //drawerIcon is not required
     drawerIcon: ({ tintColor }) => (
       <Image
-        source={require("./flower.jpg")}
-        style={{width: 24, height: 24}}
+        source={ require("./flower.jpg") }
+        style={{ width: 24, height: 24 }}
       />
     )
   }
 
   render() {
-    const {navigate} = this.props.navigation;
+    const { navigate } = this.props.navigation;
     return (
-      <View style={styles.container}>
-        <Text style={styles.welcome}>
+      <View style={ styles.container }>
+        <Text style={ styles.welcome }>
           Page Two!
         </Text>
         <Button
           title="Open Right Drawer"
 
           //Trigger the drawer on button click
-          onPress={() => this.props.navigation.navigate('DrawerOpen')}
+          onPress={ () => this.props.navigation.navigate('DrawerOpen') }
         />
 
-        <List>
+        <List style={{ backgroundColor: "white" }}>
           <FlatList
-            data={this.state.data}
+            data={ this.state.data }
             keyExtractor={ item => item.key }
-            renderItem={({item}) => <Image source={{uri: item.key}}
-                                           style={styles.image} />}
+            initialListSize={ 5 }
+            renderItem={ ({item}) => <Image source={{ uri: item.key }} style={ styles.image} /> }
           />
         </List>
       </View>
@@ -84,7 +84,7 @@ const styles = StyleSheet.create({
     marginBottom: 5,
   },
   image: {
-    width: 400,
-    height: 400
+    width: 420,
+    height: 420
   }
 });

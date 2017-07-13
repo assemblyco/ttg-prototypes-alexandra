@@ -16,6 +16,9 @@ import {
 //Library Components
 import { List, ListItem  } from 'react-native-elements';
 
+//Custom Components
+import { Row } from './row';
+
 //Import data
 import { listData } from './data';
 
@@ -23,8 +26,9 @@ export default class PageOne extends React.Component {
 
   constructor(props){
     super(props);
+
     this.state={
-      data: listData
+      data: listData.slice(0, 14),
     };
   }
 
@@ -35,39 +39,35 @@ export default class PageOne extends React.Component {
     //drawerIcon is not required
     drawerIcon: ( {tintColor} ) => (
       <Image 
-        source={require('./flower.jpg')}
-        style={{width: 24, height: 24}}
+        source={ require('./flower.jpg') }
+        style={{ width: 24, height: 24 }}
       />
     )
   };
   
   render() {
-    const {navigate} = this.props.navigation;
+    const { navigate } = this.props.navigation;
     return (
-      <View style={styles.container}>
-        <Text style={styles.welcome}>
+      <View style={ styles.container }>
+        <Text style={ styles.welcome }>
           Page One!
         </Text>
         <Button
           title="Open Right Drawer"
           //Trigger the drawer on button click
-          onPress={() => this.props.navigation.navigate('DrawerOpen')}
+          onPress = { () => this.props.navigation.navigate('DrawerOpen') }
         />
-        <List>
+        <List style={{ backgroundColor: "white" }}>
           <FlatList
-            data={this.state.data}
-            keyExtractor={ item => item.email }
-            //One oway of improving the initial rendering time is specifying
-            //the minimum number of items to be displayed on first load
-            initialListSize={14}
-            renderItem={ ({ item }) =>
-              <ListItem 
-                roundAvatar
-                title={ `${item.name.first} ${item.name.last}` }
-                avatar={{ uri: item.picture.thumbnail }}
-                containerStyle={{ borderBottomWidth: 3 }}
-              />
-            }
+            data = { this.state.data }
+            keyExtractor = { item => item.email }
+            //One way of improving the initial rendering time is specifying
+            //the minimum number of list items to be displayed on first load
+            initialListSize={ 14 }
+            //this can also be written as 
+            //renderItem={ ({item}) => <Row item={item} />}
+            renderItem={ (data) => <Row item={ data.item } /> }
+            
           />
         </List>
       </View>

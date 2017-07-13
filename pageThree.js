@@ -53,10 +53,11 @@ export default class PageThree extends React.Component {
           onPress={() => this.props.navigation.navigate('DrawerOpen')}
         />
 
-        <List>
+        <List style={{backgroundColor: "white"}}>
           <FlatList
             data={this.state.data}
             keyExtractor={ item => item.key }
+            initialListSize={ 5 }
             renderItem={({item}) => <Image source={{uri: item.key}}
                                            style={styles.image} />}
           />
@@ -83,7 +84,7 @@ const styles = StyleSheet.create({
     marginBottom: 5,
   },
   image: {
-    width: 400,
-    height: 400
+    width: 420,
+    height: 420
   }
 });
