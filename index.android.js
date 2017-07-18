@@ -1,53 +1,53 @@
-/**
- * Sample React Native App
- * https://github.com/facebook/react-native
+/*
  * @flow
  */
 
+//Native Components
 import React, { Component } from 'react';
-import {
-  AppRegistry,
-  StyleSheet,
-  Text,
-  View
-} from 'react-native';
+import { Platform, AppRegistry } from 'react-native';
 
-export default class InfiniteScroll extends Component {
-  render() {
-    return (
-      <View style={styles.container}>
-        <Text style={styles.welcome}>
-          Welcome to React Native!
-        </Text>
-        <Text style={styles.instructions}>
-          To get started, edit index.android.js
-        </Text>
-        <Text style={styles.instructions}>
-          Double tap R on your keyboard to reload,{'\n'}
-          Shake or press menu button for dev menu
-        </Text>
-      </View>
-    );
-  }
-}
+//Library Components
+import { TabNavigator, TabBarBottom } from 'react-navigation';
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-    backgroundColor: '#F5FCFF',
-  },
-  welcome: {
-    fontSize: 20,
-    textAlign: 'center',
-    margin: 10,
-  },
-  instructions: {
-    textAlign: 'center',
-    color: '#333333',
-    marginBottom: 5,
-  },
-});
+//Custom Components
+import { PageOne } from './pageOne';
+import { PageTwo } from './pageTwo';
+import { PageThree } from './pageThree'; 
+import { PageFour } from './pageFour'; 
+import { PageFive } from './pageFive'; 
 
-AppRegistry.registerComponent('InfiniteScroll', () => InfiniteScroll);
+const InfiniteScroll = TabNavigator(
+  {
+    PageOne: { screen: PageOne },
+    PageTwo: { screen: PageTwo },
+    PageThree: { screen: PageThree },
+    PageFour: { screen: PageFour },
+    PageFive: { screen: PageFive }
+  },
+  
+  {
+    headerMode: 'none', //No navbar at the top
+    swipeEnabled: false,
+    animationEnabled: false,
+    tabBarPosition: 'bottom',
+    tabBarComponent: TabBarBottom,
+    tabBarOptions: {
+      activeTintColor: 'white',
+      activeBackgroundColor: '#525252',
+      inactiveTintColor: '#a9a9a9',
+      inactiveBackgroundColor: '#d8d8d8',
+      showLabel: false, //No labels to be displayed on any platform
+      style: {
+        backgroundColor: '#fff',
+        height: (Platform.OS === 'ios') ? 100: 70,
+      },
+      tabStyle:{
+        borderLeftWidth: 1,
+        borderStyle: 'solid',
+        borderColor: 'white',
+      },
+    },
+  },
+);
+
+ AppRegistry.registerComponent('InfiniteScroll', () => InfiniteScroll);
