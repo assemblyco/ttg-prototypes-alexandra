@@ -5,32 +5,27 @@
 //Native Components
 import React, { Component } from 'react';
 import {
+  Button,
   Image,
   StyleSheet,
   Text,
   View
 } from 'react-native';
+import { TabNavigator } from 'react-navigation';
 
 //Custom components
-import { generalStyles } from './generalStyles'
+import { generalStyles } from './generalStyles';
 
 export class PageTwo extends React.Component {
-  //Navigation details
-  static navigationOptions = {
-    tabBarIcon: ({ tintColor }) => (
-      <Image
-        source={{ uri: "https://cdn1.iconfinder.com/data/icons/seo-pack-1/512/seo-34-512.png" }}
-        style={ [generalStyles.icon, { tintColor: tintColor }] }
-      />
-    ),
-  }
-
+  //Taken out the navigationOptions object since this page does not get rendered anymore
   render() {
     console.log("second page is executed");
-    return (
-      <View style={ generalStyles.container }>
-        <Text style={ generalStyles.welcome }>Page Two!</Text>
-      </View>
-    )
+
+    //The return function will not be rendered anymore therefore we can comment / delete it
+    // return (
+    //   <View style={ generalStyles.container }>
+    //     <Text style={ generalStyles.welcome }>Page Two!</Text>
+    //   </View>
+    // )
   }
 }
