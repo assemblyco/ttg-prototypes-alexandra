@@ -1,6 +1,6 @@
 //@flow
 
-export const BLACK = "BrixSansBlack";
-export const REGULAR = "BrixSansRegular";
-export const LIGHT = "BrixSansLight";
-export const EXTRA_LIGHT = "BrixSansExtraLight";
+export const FONT_BLACK = "BrixSansBlack";
+export const FONT_REGULAR = "BrixSansRegular";
+export const FONT_LIGHT = "BrixSansLight";
+export const FONT_EXTRA_LIGHT = "BrixSansExtraLight";

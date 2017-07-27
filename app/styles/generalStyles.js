@@ -8,36 +8,27 @@ import {
 
 //Custom components
 import * as Fonts from '../config/fonts.config';
+import * as Colors from '../config/colors.config';
 
 export const generalStyles = StyleSheet.create({
   container: {
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
-    backgroundColor: '#525252',
+    backgroundColor: Colors.COLOR_BLACK,
     padding: 20
-  },
-  welcome: {
-    fontSize: 20,
-    textAlign: 'center',
-    margin: 10,
-  },
-  instructions: {
-    textAlign: 'center',
-    color: '#333333',
-    marginBottom: 5,
   },
   logo: {
     fontSize: 90,
     fontWeight: "900",
     textAlign: 'center',
-    color: '#fff',
-    fontFamily: Fonts.BLACK,
+    color: Colors.COLOR_WHITE,
+    fontFamily: Fonts.FONT_BLACK,
   },
   inputField: {
     height: 36,
     marginTop: 80,
-    fontFamily: Fonts.EXTRA_LIGHT,
+    fontFamily: Fonts.FONT_EXTRA_LIGHT,
   },
   buttonContainer: {
     borderRadius: 2,
@@ -46,15 +37,15 @@ export const generalStyles = StyleSheet.create({
     paddingVertical: 15
   },
   buttonText: {
-    color: "#525252",
+    color: Colors.COLOR_BLACK,
     textAlign: "center",
-    fontFamily: Fonts.REGULAR,
+    fontFamily: Fonts.FONT_REGULAR,
     fontSize: 14,
     fontWeight: "bold",
     letterSpacing: 2
   },
   horizontalRule: {
-    borderBottomColor: 'white',
+    borderBottomColor: Colors.COLOR_WHITE,
     borderBottomWidth: 0.5,
     alignSelf: "stretch",
     marginBottom: 30
