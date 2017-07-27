@@ -5,6 +5,7 @@
 import React, { Component } from 'react';
 import {
   Image,
+  KeyboardAvoidingView,
   Text,
   View
 } from 'react-native';
@@ -15,21 +16,22 @@ import { InputField } from './components/inputField';
 import { SubmitButton } from './components/button'
 
 export class PageOne extends Component {
-  constructor(props){
-    super(props)
-  }
   render() {
     return (
-      <View style={ generalStyles.container }>
+      <KeyboardAvoidingView behavior="padding" style={ generalStyles.container }>
         <Logo />
-        <InputField placeholder="Email" />
+        <InputField
+          placeholder="Email"
+          onSubmitEditing={() => this.onSubmit()}
+        />
         <View
           style={ generalStyles.horizontalRule }
         />
         <SubmitButton
           title={"NEXT"}
+          onSubmitEditing={() => this.onSubmit()}
         />
-      </View>
+      </KeyboardAvoidingView>
     );
   }
 }

@@ -23,12 +23,12 @@ export const generalStyles = StyleSheet.create({
     fontWeight: "900",
     textAlign: 'center',
     color: Colors.COLOR_WHITE,
-    fontFamily: Fonts.FONT_BLACK,
+    fontFamily: Fonts.FONT_BLACK
   },
   inputField: {
     height: 36,
     marginTop: 80,
-    fontFamily: Fonts.FONT_EXTRA_LIGHT,
+    fontFamily: Fonts.FONT_EXTRA_LIGHT
   },
   buttonContainer: {
     borderRadius: 2,
