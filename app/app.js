@@ -11,6 +11,7 @@ import { DrawerNavigator, DrawerItems, DrawerNavigatorConfig } from 'react-navig
 import PageOne from './screens/pageOne';
 import PageTwo from './screens/pageTwo';
 import PageThree from './screens/pageThree';
+import { CustomDrawerContentComponent } from './components/customDrawerContentComponent'
 
 //Define the routes within the DraweNavigator function
 export const InfiniteScroll = DrawerNavigator(
@@ -21,6 +22,7 @@ export const InfiniteScroll = DrawerNavigator(
   },
   {
     drawerWidth: 300,
-    drawerPosition: 'right'
+    drawerPosition: 'right',
+    contentComponent: props => <CustomDrawerContentComponent { ...props }/>
   }
 );
