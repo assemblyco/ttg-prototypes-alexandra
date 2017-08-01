@@ -2,8 +2,7 @@
  * @flow
  */
 
-
-//Native components
+//Library components
 import React, { Component } from 'react';
 import {
   Button,
@@ -15,26 +14,30 @@ import {
 } from 'react-native';
 import { List, ListItem  } from 'react-native-elements';
 
-//Import data
-import { Catz } from './catz'
+//Custom components
+import { styles } from '../styles';
 
-export default class PageTwo extends React.Component {
+//Import data
+import { Dawgs } from '../../assets/Dawgs';
+
+export default class PageThree extends React.Component {
 
   constructor(props){
     super(props);
+
     this.state={
-      data: Catz
+      data: Dawgs
     }
   }
 
   //Define the navigation options for this page
   static navigationOptions = {
     //drawerLabel acts as link
-    drawerLabel: "Page Two",
+    drawerLabel: "Page Three",
     //drawerIcon is not required
     drawerIcon: ({ tintColor }) => (
       <Image
-        source={ require("./flower.jpg") }
+        source={ require("../../assets/flower.jpg") }
         style={{ width: 24, height: 24 }}
       />
     )
@@ -59,32 +62,11 @@ export default class PageTwo extends React.Component {
             data={ this.state.data }
             keyExtractor={ item => item.key }
             initialListSize={ 5 }
-            renderItem={ ({item}) => <Image source={{ uri: item.key }} style={ styles.image} /> }
+            renderItem={ ({ item }) => <Image source={{ uri: item.key }}
+                                           style={ styles.image } />}
           />
         </List>
       </View>
     );
   }
 }
-
-const styles = StyleSheet.create({
-  container: {
-    borderTopWidth: 0, 
-    borderBottomWidth: 0,
-    backgroundColor: "white"
-  },
-  welcome: {
-    fontSize: 20,
-    textAlign: 'center',
-    margin: 10,
-  },
-  instructions: {
-    textAlign: 'center',
-    color: '#333333',
-    marginBottom: 5,
-  },
-  image: {
-    width: 420,
-    height: 420
-  }
-});

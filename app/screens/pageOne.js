@@ -2,7 +2,7 @@
  * @flow
  */
 
-//Native Components
+//Library Components
 import React, { Component } from 'react';
 import {
   Button,
@@ -12,15 +12,14 @@ import {
   Text,
   View
 } from 'react-native';
-
-//Library Components
 import { List, ListItem  } from 'react-native-elements';
 
 //Custom Components
-import { Row } from './row';
+import { Row } from '../components/row';
+import { styles } from '../styles';
 
 //Import data
-import { listData } from './data';
+import { listData } from '../../assets/data';
 
 export default class PageOne extends React.Component {
 
@@ -37,14 +36,14 @@ export default class PageOne extends React.Component {
     //drawerLabel acts as link
     drawerLabel: "Page One",
     //drawerIcon is not required
-    drawerIcon: ( {tintColor} ) => (
-      <Image 
-        source={ require('./flower.jpg') }
+    drawerIcon: ({ tintColor }) => (
+      <Image
+        source={ require('../../assets/flower.jpg') }
         style={{ width: 24, height: 24 }}
       />
     )
   };
-  
+
   render() {
     const { navigate } = this.props.navigation;
     return (
@@ -64,31 +63,13 @@ export default class PageOne extends React.Component {
             //One way of improving the initial rendering time is specifying
             //the minimum number of list items to be displayed on first load
             initialListSize={ 14 }
-            //this can also be written as 
+            //this can also be written as
             //renderItem={ ({item}) => <Row item={item} />}
             renderItem={ (data) => <Row item={ data.item } /> }
-            
+
           />
         </List>
       </View>
     );
   }
 }
-
-const styles = StyleSheet.create({
-  container: {
-    borderTopWidth: 0, 
-    borderBottomWidth: 0,
-    backgroundColor: "white"
-  },
-  welcome: {
-    fontSize: 20,
-    textAlign: 'center',
-    margin: 10,
-  },
-  instructions: {
-    textAlign: 'center',
-    color: '#333333',
-    marginBottom: 5,
-  }
-});
