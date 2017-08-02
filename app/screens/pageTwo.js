@@ -25,6 +25,7 @@ export default class PageTwo extends React.Component {
 
   constructor(props){
     super(props);
+
     this.state={
       data: Catz
     }

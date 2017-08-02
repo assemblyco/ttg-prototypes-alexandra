@@ -40,5 +40,9 @@ export const styles = StyleSheet.create({
     padding: 12,
     flexDirection: 'row',
     alignItems: 'center'
+  },
+  toggleButton: {
+    flex: 1,
+    marginLeft: 13
   }
 });
