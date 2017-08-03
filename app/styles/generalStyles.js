@@ -28,7 +28,9 @@ export const generalStyles = StyleSheet.create({
   inputField: {
     height: 36,
     marginTop: 80,
-    fontFamily: Fonts.FONT_EXTRA_LIGHT
+    alignSelf: "stretch",
+    fontFamily: Fonts.FONT_EXTRA_LIGHT,
+    color: "pink"
   },
   buttonContainer: {
     borderRadius: 2,

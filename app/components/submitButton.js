@@ -8,14 +8,16 @@ import { Text, TouchableOpacity } from 'react-native';
 import { generalStyles } from '../styles/generalStyles';
 
 export class SubmitButton extends Component {
+  constructor(props){
+    super(props)
+  }
+
   render(){
+
     return(
-      <TouchableOpacity
-        style={ generalStyles.buttonContainer }
-      >
-        <Text
-          style={ generalStyles.buttonText }
-        >
+      <TouchableOpacity style={ generalStyles.buttonContainer }
+                        onPress={ this.props.onPress }>
+        <Text style={ generalStyles.buttonText }>
           { this.props.title }
         </Text>
       </TouchableOpacity>

@@ -2,8 +2,8 @@
  * @flow
  */
 
-import React, { Component } from 'react';
+import React from 'react';
 import { AppRegistry } from 'react-native';
-import { PageOne } from './app/pageOne';
+import { Nav } from './app/config/navigation.config';
 
-AppRegistry.registerComponent('InfiniteScroll', () => PageOne);
+AppRegistry.registerComponent('InfiniteScroll', () => Nav);
