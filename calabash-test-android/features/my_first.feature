@@ -1,5 +1,6 @@
-Feature: Login feature
+# This is for Android
+Feature: Sample Scenario
 
-  Scenario: As a valid user I can log into my app
-    When I press "Login"
-    Then I see "Welcome to coolest app ever"
+  Scenario: Sample Scenario
+    Given the app has launched
+    And I should see "TTG"

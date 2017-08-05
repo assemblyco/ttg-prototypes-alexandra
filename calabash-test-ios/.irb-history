@@ -1,0 +1,4 @@
+curl http://localhost:37265/version
+esc
+q
+exit
