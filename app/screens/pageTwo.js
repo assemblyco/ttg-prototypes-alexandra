@@ -23,7 +23,8 @@ export class PageTwo extends Component {
       <View style={ generalStyles.container }>
         <Logo />
         <InputField placeholder="Password"
-                    secureTextEntry={ true } />
+                    secureTextEntry={ true }
+                    testId={ "submitPasswordInput" } />
         <View style={ generalStyles.horizontalRule } />
         <SubmitButton onPress={ () => navigate('PageThree') }
                       title={ "SUBMIT" } />

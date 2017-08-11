@@ -29,7 +29,8 @@ export class InputField extends Component {
         returnKeyLabel="Next"
         //Make the underline transparent so it doesn't show for aesthetic reasons
         underlineColorAndroid= "rgba(0, 0, 0, 0)"
-        autoCorrect={ false } />
+        autoCorrect={ false }
+        testID={ this.props.testId } />
     )
   }
 }

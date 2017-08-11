@@ -14,7 +14,7 @@ export class Logo extends Component {
   render(){
     return(
       <View>
-        <Text style={generalStyles.logo}>TTG</Text>
+        <Text style={generalStyles.logo} testID="appTitle">TTG</Text>
       </View>
     )
   }

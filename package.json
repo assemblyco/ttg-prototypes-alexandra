@@ -16,8 +16,10 @@
 	"devDependencies": {
 		"babel-jest": "20.0.3",
 		"babel-preset-react-native": "2.0.0",
+		"detox": "^5.6.1",
 		"flow-bin": "0.45.0",
 		"jest": "20.0.4",
+		"mocha": "^3.5.0",
 		"react-test-renderer": "16.0.0-alpha.12"
 	},
 	"jest": {
@@ -27,5 +29,15 @@
 		"assets": [
 			"./assets/fonts"
 		]
+	},
+	"detox": {
+	  "configurations": {
+	    "ios.sim.debug": {
+	      "binaryPath": "ios/DerivedData/InfiniteScroll/Build/Products/Debug-iphonesimulator/InfiniteScroll.app",
+	      "build": "xcodebuild -project ios/InfiniteScroll.xcodeproj -scheme InfiniteScroll -configuration Debug -sdk iphonesimulator -derivedDataPath ios/DerivedData",
+	      "type": "ios.simulator",
+	      "name": "iPhone 7"
+	    }
+	  } 
 	}
 }
