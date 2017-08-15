@@ -29,7 +29,7 @@ export class PageOne extends Component {
     return (
       //For non-scrollable views KeyboardAvoidingView is pushing the view upwards to give room for keyboard
       <KeyboardAvoidingView behavior="padding" style={ generalStyles.container }>
-        <Logo/>
+        <Logo testId={ "pageOneLogo" } />
         <InputField placeholder="Email" />
         <View
           style={ generalStyles.horizontalRule } />

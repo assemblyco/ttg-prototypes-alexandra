@@ -21,7 +21,7 @@ export class PageTwo extends Component {
     const { goBack, navigate } = this.props.navigation;
     return (
       <View style={ generalStyles.container }>
-        <Logo />
+        <Logo testId={ "pageTwoLogo" }/>
         <InputField placeholder="Password"
                     secureTextEntry={ true }
                     testId={ "submitPasswordInput" } />

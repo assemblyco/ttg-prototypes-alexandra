@@ -18,7 +18,7 @@ export class SubmitButton extends Component {
       <TouchableOpacity style={ generalStyles.buttonContainer }
                         onPress={ this.props.onPress }>
         <Text style={ generalStyles.buttonText }
-        testID={ this.props.testId }>
+              testID={ this.props.testId }>
           { this.props.title }
         </Text>
       </TouchableOpacity>
